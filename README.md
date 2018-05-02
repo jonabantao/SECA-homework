@@ -1,1 +1,1 @@
-###Repo containing all homework assigned during the SECA course
+### Repo containing all homework assigned during the SECA course
