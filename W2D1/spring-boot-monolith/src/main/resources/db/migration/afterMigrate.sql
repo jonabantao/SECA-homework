@@ -5,3 +5,9 @@ VALUES
 	('another user', 'Jon', 'Ab'),
 	('someone', 'Jack', 'Jill'),
 	('someone else', 'John', 'Doe');
+
+INSERT INTO SONGS
+	(TITLE, LENGTH)
+VALUES
+	('come and get your love', 334),
+	('some song', 892);
