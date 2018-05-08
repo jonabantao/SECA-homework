@@ -12,19 +12,19 @@ public class Song {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "SONG_NAME")
-    private String songName;
+    @Column(name = "TITLE")
+    private String title;
 
-    @Column(name = "FIRST_NAME")
-    private String firstName;
+    @Column(name = "ARTIST")
+    private String songArtist;
 
-    @Column(name = "LAST_NAME")
-    private String lastName;
+    @Column(name = "LENGTH")
+    private int length;
 
-    public Song(String songName, String firstName, String lastName) {
-        this.songName = songName;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Song(String title, String songArtist, int length) {
+        this.title = title;
+        this.songArtist = songArtist;
+        this.length = length;
     }
 
 }
