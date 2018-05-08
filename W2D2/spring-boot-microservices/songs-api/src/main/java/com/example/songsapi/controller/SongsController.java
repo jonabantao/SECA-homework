@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 public class SongsController {
     @Autowired
@@ -19,6 +20,11 @@ public class SongsController {
     @GetMapping("/{songId}")
     public Song findSongById(@PathVariable Long songId) {
         return songRepository.findOne(songId);
+    }
+
+    @GetMapping("/search")
+    public Iterable<Song> findSongByTitle(@RequestParam("title") String title) {
+        return songRepository.findByTitleContaining(title);
     }
 
     @DeleteMapping("/{songId}")
