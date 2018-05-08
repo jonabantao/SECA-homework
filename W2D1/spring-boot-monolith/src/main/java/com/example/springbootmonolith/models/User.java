@@ -21,8 +21,16 @@ public class User {
     @Column(name = "LAST_NAME")
     private String lastName;
 
+    public User(String userName, String firstName, String lastName) {
+        this.userName = userName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
 }
 
+
+// SAMPLE CODE WITHOUT PROJECT LOMBOK
 //package com.example.springbootmonolith.models;
 //
 //import javax.persistence.*;
