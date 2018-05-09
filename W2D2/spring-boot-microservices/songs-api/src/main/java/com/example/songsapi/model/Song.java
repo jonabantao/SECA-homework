@@ -18,13 +18,13 @@ public class Song {
     @Column(name = "ARTIST")
     private String songArtist;
 
-    @Column(name = "LENGTH")
-    private int length;
+    @Column(name = "MILLISECONDS")
+    private long milliseconds;
 
-    public Song(String title, String songArtist, int length) {
+    public Song(String title, String songArtist, long milliseconds) {
         this.title = title;
         this.songArtist = songArtist;
-        this.length = length;
+        this.milliseconds = milliseconds;
     }
 
 }

@@ -24,7 +24,7 @@ public class SongsController {
 
     @GetMapping("/search")
     public Iterable<Song> findSongByTitle(@RequestParam("title") String title) {
-        return songRepository.findByTitleContaining(title);
+        return songRepository.findByTitleContainingIgnoreCase(title);
     }
 
     @DeleteMapping("/{songId}")
@@ -45,7 +45,7 @@ public class SongsController {
 
         songFromDb.setTitle(songRequest.getTitle());
         songFromDb.setSongArtist(songRequest.getSongArtist());
-        songFromDb.setLength(songRequest.getLength());
+        songFromDb.setMilliseconds(songRequest.getMilliseconds());
 
         return songRepository.save(songFromDb);
     }

@@ -59,3 +59,9 @@ services:
          - POSTGRES_PASSWORD=password
          - POSTGRES_USER=postgres
          - POSTGRES_DB=pgdev
+  flyway:
+    image: jimmyoak/flyway:4.0.3
+    command: "wait-for-it --timeout=60 --strict postgresdev:5432 -- flyway migrate"
+    volumes:
+      - './flyway/conf:/flyway/conf'
+      - './flyway/sql:/flyway/sql'
