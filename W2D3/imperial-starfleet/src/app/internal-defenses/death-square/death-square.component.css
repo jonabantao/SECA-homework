@@ -1,0 +1,8 @@
+.death-square {
+  margin: 30px auto;
+  background-color: lightgray;
+  box-sizing: border-box;
+  height: 80vh;
+  width: 80vh;
+  position: relative;
+}
