@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-image: url("./assets/images/outlier-galaxy-ugc-4879-1920.jpg");
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
+  padding-top: 1em;
 }
