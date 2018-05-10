@@ -1,0 +1,11 @@
+.death-square {
+  margin: 30px auto;
+  background: linear-gradient(gray, rgb(80, 80, 80), gray);
+  box-sizing: border-box;
+  height: 80vh;
+  width: 80vh;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}

@@ -1,0 +1,4 @@
+.turret {
+  flex-grow: 1;
+  width: calc(100% * (1/4));
+}
