@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, catchError } from 'rxjs/operators';
 
 import { SearchService } from './search.service';
 
@@ -22,12 +22,12 @@ export class SearchComponent implements OnInit {
     this.searchSubject
       .pipe(
         debounceTime(1000),
-        distinctUntilChanged()
+        distinctUntilChanged(),
       )
       .subscribe(zip => {
           this.searchService.createAPIObservable(zip)
             .subscribe(res => this.weather = res);
-        }
+        },
       );
   }
 
