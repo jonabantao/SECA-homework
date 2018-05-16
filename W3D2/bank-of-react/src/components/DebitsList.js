@@ -3,8 +3,9 @@ import moment from 'moment';
 
 import BalanceItem from './BalanceItem';
 import BalanceHistory from './BalanceHistory';
+import DebitsForm from './DebitsForm';
 
-const DebitsList = ({ debitBalance }) => {
+const DebitsList = ({ debitBalance, addNewDebit }) => {
   if (!debitBalance.length) {
     return (
       <div>
@@ -29,6 +30,7 @@ const DebitsList = ({ debitBalance }) => {
   return (
     <section>
       <h2>Debits</h2>
+      <DebitsForm addNewDebit={addNewDebit} />
       <BalanceHistory logHistory={debitLogs} />
     </section>
   );

@@ -36,6 +36,7 @@ AND each Debit should display a Debit amount
 AND each Debit should display a Debit date
 ```
 
+**COMPLETED**
 ```text
 Viewing the Account Balance on the Debits page:
 
@@ -44,6 +45,7 @@ WHEN I view the Account Balance display area
 THEN I should see my Account Balance displayed
 ```
 
+**COMPLETED**
 ```text
 Adding debits:
 
@@ -55,6 +57,7 @@ THEN I should see my new debit added to the Debits display area with the current
 AND I should see my Account Balance updated to reflect the new Debit
 ```
 
+**COMPLETED**
 ```text
 Viewing the Account Balance on the Debits page:
 

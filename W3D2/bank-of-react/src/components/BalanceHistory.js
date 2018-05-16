@@ -2,12 +2,14 @@ import React from 'react';
 
 const BalanceHistory = ({ logHistory }) => (
   <table>
-    <tr>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Amount</th>
-    </tr>
-    {logHistory}
+    <tbody>
+      <tr>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Amount</th>
+      </tr>
+      {logHistory}
+    </tbody>
   </table>
 );
 

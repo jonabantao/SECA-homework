@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import _ from 'lodash';
 
 import { getDebitAndCreditBalance } from '../api_util/balance';
 
@@ -19,6 +20,8 @@ class AccountProfile extends Component {
         memberSince: '08/23/99',
       },
     };
+
+    this.addNewDebit = this.addNewDebit.bind(this);
   }
 
   componentDidMount() {
@@ -56,6 +59,13 @@ class AccountProfile extends Component {
 
     return (totalCredit - totalDebit).toFixed(2);
   }
+
+  addNewDebit(newDebit) {
+    const debitCopy = _.merge([], this.state.debitBalance);
+    debitCopy.push(newDebit);
+
+    this.setState({ debitBalance: debitCopy });
+  }
   
   render() {
     const UserProfileComponent = () => (
@@ -66,7 +76,10 @@ class AccountProfile extends Component {
     );
 
     const DebitsComponent = () => (
-      <DebitsList debitBalance={this.state.debitBalance} />
+      <DebitsList 
+        debitBalance={this.state.debitBalance} 
+        addNewDebit={this.addNewDebit}
+      />
     );
 
     // const CreditsComponent = () => (
