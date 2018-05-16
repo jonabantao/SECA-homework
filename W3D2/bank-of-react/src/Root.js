@@ -27,20 +27,9 @@ class Root extends Component {
   }
   
   render() {
-    const AppComp = () => (<App accountBalance={this.state.accountBalance} />);
-    const UserProfileComponent = () => (
-        <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
-    );
-    const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
-
-
     return (
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/" render={AppComp} />
-          <Route exact path="/userProfile" render={UserProfileComponent}/>
-          <Route exact path="/login" render={LogInComponent}/>
-        </Switch>
+        <App />
       </BrowserRouter>
     );
   }
