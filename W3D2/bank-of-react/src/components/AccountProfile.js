@@ -7,6 +7,7 @@ import { getDebitAndCreditBalance } from '../api_util/balance';
 import AccountBalance from './AccountBalance';
 import UserProfile from './UserProfile';
 import DebitsList from './DebitsList';
+import CreditsList from './CreditsList';
 
 class AccountProfile extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class AccountProfile extends Component {
     };
 
     this.addNewDebit = this.addNewDebit.bind(this);
+    this.addNewCredit = this.addNewCredit.bind(this);
   }
 
   componentDidMount() {
@@ -66,6 +68,13 @@ class AccountProfile extends Component {
 
     this.setState({ debitBalance: debitCopy });
   }
+
+  addNewCredit(newCredit) {
+    const creditCopy = _.merge([], this.state.creditBalance);
+    creditCopy.push(newCredit);
+
+    this.setState({ creditBalance: creditCopy });
+  }
   
   render() {
     const UserProfileComponent = () => (
@@ -82,9 +91,12 @@ class AccountProfile extends Component {
       />
     );
 
-    // const CreditsComponent = () => (
-    //   <DebitsList debitBalance={this.state.debitBalance} />
-    // );
+    const CreditsComponent = () => (
+      <CreditsList 
+        creditBalance={this.state.creditBalance}
+        addNewCredit={this.addNewCredit}
+      />
+    );
 
     const currentBalance = this.calculateCurrentBalance(
       this.state.debitBalance,
@@ -97,7 +109,7 @@ class AccountProfile extends Component {
         <Switch>
           <Route exact path="/account/home" render={UserProfileComponent} />
           <Route exact path="/account/debits" render={DebitsComponent} />
-          <Route exact path="/account/home" component={UserProfileComponent} />
+          <Route exact path="/account/credits" render={CreditsComponent} />
         </Switch>
       </React.Fragment>
     );

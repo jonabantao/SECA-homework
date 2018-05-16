@@ -68,6 +68,7 @@ THEN I should see my Account Balance displayed
 
 #### Adding Credits
 
+**COMPLETED**
 ```text
 Viewing the Credits page:
 
@@ -77,6 +78,7 @@ THEN I should be redirected to the Credits page
 AND I should see a title of 'Credits' on the page
 ```
 
+**COMPLETED**
 ```text
 Displaying debits:
 
@@ -88,6 +90,7 @@ AND each Debit should display a Debit amount
 AND each Debit should display a Debit date
 ```
 
+**COMPLETED**
 ```text
 Viewing the Account Balance on the Credits page:
 
@@ -96,6 +99,7 @@ WHEN I view the Account Balance display area
 THEN I should see my Account Balance displayed
 ```
 
+**COMPLETED**
 ```text
 Adding Credits:
 
@@ -107,6 +111,7 @@ THEN I should see my new debit added to the Credits display area with the curren
 AND I should see my Account Balance updated to reflect the new Debit
 ```
 
+**COMPLETED**
 ```text
 Viewing the Account Balance on the Credits page:
 
