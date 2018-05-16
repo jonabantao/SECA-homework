@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Home from './Home';
 import AccountProfile from './AccountProfile';
@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/account" component={AccountProfile} />
+        <Route path="/account" component={AccountProfile} />
       </Switch>
     );
   }

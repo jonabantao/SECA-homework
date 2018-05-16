@@ -1,8 +1,8 @@
 ## Bank of React Lab
 
 ### User Stories to Fulfill
-#### Updating the Account Balance 
 **COMPLETED**
+#### Updating the Account Balance 
 ```text 
 Making the Account Balance dynamic:
 
@@ -12,7 +12,9 @@ THEN I should see an Account Balance that accurately represents my Debits subtra
 AND I should be able to see a negative account balance if I have more Debits than Credits
 ```
 
+**TODO**
 #### Adding Debits
+**COMPLETED**
 ```text
 Viewing the Debits page:
 

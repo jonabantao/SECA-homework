@@ -11,7 +11,7 @@ class Home extends Component {
         />
         <h1>Bank of React</h1>
 
-        <Link to="/account">Go to Account Page</Link>
+        <Link to="/account/home">Go to Account Page</Link>
       </div>
     );
   }

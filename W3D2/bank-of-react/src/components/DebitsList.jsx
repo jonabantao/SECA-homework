@@ -1,28 +1,31 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
 
-class DebitsList extends Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      debits: [],
-    };
-  }
+import DebitsItem from './DebitsItem';
 
-  componentDidMount() {
-    axios.get('/debits')
-      .then(debits => this.setState(debits));
-  }
-  
-
-  render() {
+const DebitsList = ({ debitBalance }) => {
+  if (!debitBalance.length) {
     return (
       <div>
-        
+        <p>No debits found</p>
       </div>
     );
   }
-}
+
+  const debitLogs = debitBalance.map(log => (
+    <DebitsItem
+      key={log.id}
+      description={log.description}
+      amount={log.amount}
+      date={log.date}
+    />
+  ));
+  
+  return (
+    <section>
+      <h1>Debits</h1>
+      {debitLogs}
+    </section>
+  );
+};
 
 export default DebitsList;

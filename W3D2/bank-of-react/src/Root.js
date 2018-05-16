@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import App from './components/App';
-import UserProfile from './components/UserProfile';
-import LogIn from './components/Login';
 
 class Root extends Component {
   constructor(props) {
