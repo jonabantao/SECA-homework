@@ -21,7 +21,7 @@ class CreditsForm extends Component {
     e.preventDefault();
     const { amount, description } = this.state;
     const date = new Date();
-    const formattedAmount = parseFloat(Number(amount)).toFixed(2);
+    const formattedAmount = parseFloat(amount);
 
     const newCredit = {
       id: uuidv1(),
@@ -34,6 +34,7 @@ class CreditsForm extends Component {
   }
 
   render() {
+    console.log('test');
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
