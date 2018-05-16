@@ -34,7 +34,6 @@ class CreditsForm extends Component {
   }
 
   render() {
-    console.log('test');
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
