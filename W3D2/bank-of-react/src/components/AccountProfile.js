@@ -23,8 +23,10 @@ class AccountProfile extends Component {
 
   componentDidMount() {
     getDebitAndCreditBalance(( debit, credit ) => {
-      const debitBalance = debit.data;
-      const creditBalance = credit.data;
+      const debits = debit.data;
+      const credits = credit.data;
+      const debitBalance = this.sortLogs(debits);
+      const creditBalance = this.sortLogs(credits);
 
       const newBalance = {
         debitBalance,
@@ -32,6 +34,15 @@ class AccountProfile extends Component {
       };
       
       this.setState(newBalance);
+    });
+  }
+
+  sortLogs(balance) {
+    return balance.sort((logOne, logTwo) => {
+      let dateOne = new Date(logOne.date);
+      let dateTwo = new Date(logTwo.date);
+
+      return dateOne - dateTwo;
     });
   }
 

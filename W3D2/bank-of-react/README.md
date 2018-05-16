@@ -24,6 +24,7 @@ THEN I should be redirected to the Debits page
 AND I should see a title of 'Debits' on the page
 ```
 
+**COMPLETED**
 ```text
 Displaying debits:
 
