@@ -6,12 +6,18 @@ class Product extends Component {
         const description = this.props.description;
         const price = this.props.price;
 
+        const adminDeleteButton = this.props.deleteProduct ? (
+            <button onClick={this.props.deleteProduct}>Delete</button>
+        ) : (
+            null
+        );
+
         return (
             <div>
                 <h3>{productName}</h3>
                 <div>{description}</div>
                 <div>{price}</div>
-                <button onClick={this.props.deleteProduct}>Delete</button>
+                {adminDeleteButton}
             </div>
         );
     }

@@ -5,6 +5,7 @@ import Product from './Product';
 class ProductList extends Component {
     render() {
         const productList = this.props.productList;
+        const adminMode = Boolean(this.props.deleteProductFromList);
 
         const productComponents = productList.map((product, index) => {
             return <Product
@@ -12,7 +13,7 @@ class ProductList extends Component {
                 description={product.description}
                 price={product.price}
                 key={index}
-                deleteProduct={this.props.deleteProductFromList(index)}
+                deleteProduct={adminMode ? this.props.deleteProductFromList(index) : null}
             />;
         });
 

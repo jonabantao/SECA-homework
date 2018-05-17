@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import AdminView from './AdminView'
+import AdminView from './AdminView';
+import ShopView from './ShopView';
 
 import _ from 'lodash';
 
@@ -19,12 +20,17 @@ class HomePage extends Component {
                 description: 'Itsa nail',
                 price: 0.12,
             }
-        ]
+        ],
+        isAdminMode: false,
     }
 
     toggleEditSaleItem = () => {
         const editSaleItem = !this.state.editSaleItem;
         this.setState({editSaleItem});
+    }
+
+    toggleAdminMode = () => {
+        this.setState({ isAdminMode: !this.state.isAdminMode })
     }
 
     handleItemCurrentlyOnSaleChange = (event) => {
@@ -64,6 +70,18 @@ class HomePage extends Component {
         };
     }
 
+    renderViewOrAdmin = () => {
+        return this.state.isAdminMode ? (
+            <AdminView 
+                productList={this.state.productList} 
+                addNewProductToProductList={this.addNewProductToProductList}
+                deleteProductFromList={this.deleteProductFromList}
+            />
+        ) : (
+            <ShopView productList={this.state.productList} />
+        );
+    }
+
     render() {
         return (
             <div>
@@ -75,14 +93,10 @@ class HomePage extends Component {
                   {this.state.editSaleItem ? 'Hide' : 'Edit Sale Item'}
                 </button>
               </span>
-
                     {this.displayEditSaleItemElement()}
-                    <AdminView 
-                        productList={this.state.productList} 
-                        addNewProductToProductList={this.addNewProductToProductList}
-                        deleteProductFromList={this.deleteProductFromList}
-                    />
+                    {this.renderViewOrAdmin()}
                 </div>
+                <button onClick={this.toggleAdminMode}>Switch to {this.state.isAdminMode ? 'User' : 'Admin'}</button>
             </div>
         );
     }
