@@ -11,6 +11,7 @@ class Product extends Component {
                 <h3>{productName}</h3>
                 <div>{description}</div>
                 <div>{price}</div>
+                <button onClick={this.props.deleteProduct}>Delete</button>
             </div>
         );
     }

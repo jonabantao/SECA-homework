@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import AdminView from './AdminView'
 
+import _ from 'lodash';
+
 class HomePage extends Component {
 
     state = {
@@ -53,6 +55,15 @@ class HomePage extends Component {
         });
     };
 
+    deleteProductFromList = (index) => {
+        return () => {
+            const copiedProducts = _.merge([], this.state.productList);
+            copiedProducts.splice(index, 1);
+
+            this.setState({ productList: copiedProducts });
+        };
+    }
+
     render() {
         return (
             <div>
@@ -68,7 +79,9 @@ class HomePage extends Component {
                     {this.displayEditSaleItemElement()}
                     <AdminView 
                         productList={this.state.productList} 
-                        addNewProductToProductList={this.addNewProductToProductList}/>
+                        addNewProductToProductList={this.addNewProductToProductList}
+                        deleteProductFromList={this.deleteProductFromList}
+                    />
                 </div>
             </div>
         );

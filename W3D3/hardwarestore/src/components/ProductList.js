@@ -11,7 +11,9 @@ class ProductList extends Component {
                 productName={product.productName}
                 description={product.description}
                 price={product.price}
-                key={index}/>;
+                key={index}
+                deleteProduct={this.props.deleteProductFromList(index)}
+            />;
         });
 
         return (
