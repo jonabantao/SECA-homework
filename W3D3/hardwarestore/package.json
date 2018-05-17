@@ -2,7 +2,9 @@
   "name": "react-hardware-store",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080/",
   "dependencies": {
+    "axios": "^0.18.0",
     "lodash": "^4.17.10",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

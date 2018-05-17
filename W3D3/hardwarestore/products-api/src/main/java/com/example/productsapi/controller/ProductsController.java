@@ -58,7 +58,7 @@ public class ProductsController {
 
         productFromDb = optionalProduct.get();
 
-        productFromDb.setName(productRequest.getName());
+        productFromDb.setProductName(productRequest.getProductName());
         productFromDb.setDescription(productRequest.getDescription());
         productFromDb.setPrice(productRequest.getPrice());
 

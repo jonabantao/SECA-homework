@@ -1,27 +1,24 @@
 import React, {Component} from 'react';
+import _ from 'lodash';
+import axios from 'axios';
+
 import AdminView from './AdminView';
 import ShopView from './ShopView';
 
-import _ from 'lodash';
 
 class HomePage extends Component {
 
     state = {
         itemCurrentlyOnSale: 'A Hammer',
         editSaleItem: false,
-        productList: [
-            {
-                productName: 'Hammer',
-                description: 'Itsa hammer',
-                price: 12.3,
-            },
-            {
-                productName: 'Nail',
-                description: 'Itsa nail',
-                price: 0.12,
-            }
-        ],
+        productList: [],
         isAdminMode: false,
+    }
+
+    componentDidMount() {
+        axios.get('/products')
+            .then(res => this.setState({ productList: res.data }))
+            .catch(console.error);
     }
 
     toggleEditSaleItem = () => {
