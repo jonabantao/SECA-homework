@@ -16,11 +16,11 @@ export class UsersService {
     );
   }
 
-  getUsers() {
+  getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>('/api/users');
   }
 
-  deleteUser(userId: string) {
+  deleteUser(userId: number) {
     return this.httpClient.delete(`/api/users/${userId}`);
   }
 
